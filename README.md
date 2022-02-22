@@ -1,4 +1,4 @@
-# simplepicker
+# datetimepicker
 
 Simple datetime picker in vanilla javascript.
 This project is mostly based on [material-datetime-picker](https://github.com/ripjar/material-datetime-picker), but
