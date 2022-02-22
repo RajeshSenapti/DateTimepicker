@@ -8,6 +8,7 @@ without it relying on external dependencies like `moment`,
 ## Installation
 
 Install from npm:
+
 ```
 npm install simplepicker
 ```
@@ -37,21 +38,23 @@ This library is exported as a constructor, so you will need to create
 and instance of the simplepicker.
 
 #### `new SimplePicker([el, opts])`:
-  * `el` (optional, `string`, `Element`) - this parameter is optional
+
+- `el` (optional, `string`, `Element`) - this parameter is optional
   but if no selector or element is passed it defaults to `body`.
 
-  * `opts` (optional, `object`) - possible options:
-    - `zIndex` (`number`): sets the `z-index` for the simplepicker.
-    - `disableTimeSection` (`boolean`): If `true` disables the time picker section.
-    - `compactMode` (`boolean`): If `true` the simplepicker will be more compact; the large
-                                 display of the selected date, i.e. 25th will not be displayed.
-    - `selectedDate` (`Date`): initialize the simplepicker with this date, if not used then today
-                               will be used
+- `opts` (optional, `object`) - possible options:
+  - `zIndex` (`number`): sets the `z-index` for the simplepicker.
+  - `disableTimeSection` (`boolean`): If `true` disables the time picker section.
+  - `compactMode` (`boolean`): If `true` the simplepicker will be more compact; the large
+    display of the selected date, i.e. 25th will not be displayed.
+  - `selectedDate` (`Date`): initialize the simplepicker with this date, if not used then today
+    will be used
 
 The first argument passed could be `opts`.
 
 This method creates new simplepicker instance, and inserts it into the dom.
 It throws error only if the selector passed is not valid.
+
 ```javascript
 const simplepicker = new SimplePicker();
 ```
@@ -68,7 +71,7 @@ const picker2 = new SimplePicker();
 // but to have to diffrent picker on same page
 // you will need to pass a diffrent selector as shown below.
 const picker1 = new SimplePicker();
-const picker2 = new SimplePicker('.some-element');
+const picker2 = new SimplePicker(".some-element");
 ```
 
 #### `simplepicker.open()`
@@ -86,12 +89,14 @@ This method closes the picker without the user's action.
 Make sure you are not ruining user experience unnecessarily.
 
 #### `simplepicker.reset(date)`:
-  * `date` (optional, `Date`) - The date to select after reset. Default is current date (as in `new Date()`).
+
+- `date` (optional, `Date`) - The date to select after reset. Default is current date (as in `new Date()`).
 
 **Note**: This method will overrride what the user may have already selected. Therefore,
 use it with care considering user experience.
 
 The example below sets resets to a date before showing the picker.
+
 ```javascript
 const sp = new SimplePicker();
 sp.reset(new Date(2019, 12, 31, 7, 0, 0));
@@ -99,23 +104,25 @@ sp.open();
 ```
 
 #### `simplepicker.on(event, handler)`:
-  - `event` (required, `string`): The name of the event, currently
-    `submit`, and `close` are supported.
-  - `handler` (required, `function`): This handler is called then
-    the event is triggred.
+
+- `event` (required, `string`): The name of the event, currently
+  `submit`, and `close` are supported.
+- `handler` (required, `function`): This handler is called then
+  the event is triggred.
 
 This function attaches a listener to simplepicker, which are called on sepecific events.
 There could be multiple event listeners for a single event.
 
 Events:
-  - `submit`: `handler(date, readableDate)` - Called
-    when user selects the date. It is called with two arguments:
-    `date` is first arguments that is a javascript date object, and
-    the second parameter is `readableDate` a string with date in format
-    `1st October 2018 12:00 AM`.
-  - `close`: `handler()` - It is called when due to user's action the
-    picker was close. It happens when user clicks the cancel button
-    or the picker overlay. Its handlers are called with no arguments.
+
+- `submit`: `handler(date, readableDate)` - Called
+  when user selects the date. It is called with two arguments:
+  `date` is first arguments that is a javascript date object, and
+  the second parameter is `readableDate` a string with date in format
+  `1st October 2018 12:00 AM`.
+- `close`: `handler()` - It is called when due to user's action the
+  picker was close. It happens when user clicks the cancel button
+  or the picker overlay. Its handlers are called with no arguments.
 
 #### `simplepicker.disableTimeSection()`
 
@@ -124,3 +131,8 @@ This method disables the time picker section.
 #### `simplepicker.enableTimeSection()`
 
 This method re-enables the time picker section if it was previously disabled.
+"# DateTimepicker"
+
+# npm i
+
+# npm start
